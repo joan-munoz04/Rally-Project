@@ -62,8 +62,8 @@ export default function Register() {
     <div>
       {/* Header manual */}
       <div className="bg-orange-500 text-white p-4 flex font-medium justify-between items-center">
-        <Button text="Registrarse" color="lOrange" size="medium" icon="ic:baseline-assignment" variant="altOrange" onClick={handleRegister} />
-        <Button text="Volver" color="lOrange" size="medium" icon="ic:outline-start" variant="altOrange" onClick={handleBack} />
+        <Button text="Registrarse" color="lOrange" size="medium" icon="ic:baseline-assignment" iconPosition="right" variant="altOrange" onClick={handleRegister} />
+        <Button text="Volver" color="lOrange" size="medium" icon="ic:outline-start" iconPosition="right" variant="altOrange" onClick={handleBack} />
       </div>
 
       <div className="p-6 max-w-6xl mx-auto">

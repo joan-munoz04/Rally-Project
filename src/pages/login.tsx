@@ -50,8 +50,8 @@ export default function Login() {
           </div>
 
           <div className="flex flex-col w-70 mx-auto h-34 space-y-8 pt-4 font-medium text-lg">
-            <Button text="Ingresar" color="lOrange" size="medium" variant="orange"/>
-            <Button text="Salir" color="lOrange" size="medium" variant="orange" onClick={() => router.replace('/')}/>
+            <Button text="Ingresar" color="lOrange" size="medium" variant="altOrange"/>
+            <Button text="Salir" color="lOrange" size="medium" variant="altOrange" onClick={() => router.replace('/')}/>
         </div>
        </form>
       </div>

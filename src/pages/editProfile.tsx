@@ -3,28 +3,38 @@ import InfoItem from "@/components/molecules/infoItem";
 import CompetenceTable from "@/components/organisms/competenceTable";
 import { useRouter } from "next/router";
 
-export default function Profile() {
+export default function EditProfile() {
   const router = useRouter();
+  const handleSave = () => {
+    alert("Guardado!");
+  };
+  const handleChange = () => {
+    alert("Foto cambiada!");
+  };
+
   return (
     <div className="bg-creamOrange min-h-screen flex justify-center items-center px-4 py-8">
       <div className="bg-white w-full max-w-6xl rounded-xl shadow-lg overflow-hidden">
         <div className="flex justify-between items-start bg-peach px-6 py-4">
           <div className="flex-grow flex justify-center">
             <UserCard
-              name="Valentina Cadena"
-              email="valentina.cadenaz@udea.edu.co"
+              bottomButton={{
+                text: "Cambiar",
+                icon: "mdi:user-add-outline",
+                iconPosition: "right",
+                onClick: handleChange,
+              }}
               avatarUrl="/profPic.jpg"
               leftButton={{
-                text: "Editar",
-                icon: "ic:round-mode-edit",
+                text: "Guardar",
+                icon: "mdi:content-save-outline",
                 iconPosition: "right",
-                onClick: () => router.replace("editProfile"),
+                onClick: handleSave,
               }}
               rightButton={{
-                text: "Salir",
-                icon: "ic:outline-start",
-                iconPosition: "right",
-                onClick: () => router.replace("/"),
+                text: "Volver",
+                icon: "ic:sharp-arrow-back",
+                onClick: () => router.replace("/profile"),
               }}
             />
           </div>
@@ -52,7 +62,7 @@ export default function Profile() {
             />
           </div>
 
-          <div className="flex-1 md:pt-2">
+          <div className="flex-1">
             <CompetenceTable />
           </div>
         </div>
