@@ -4,6 +4,7 @@
     --darkOrange: #FF6A00;
     --lightOrange: #FF842C;
     --creamOrange: #F9B37F;
+    --softOrange: #f9b47f3f;
     --grey: #EAEAEA;
 }
 
@@ -11,6 +12,7 @@
     --color-darkOrange: var(--darkOrange);
     --color-lightOrange: var(--lightOrange);
     --color-creamOrange: var(--creamOrange);
+    --color-softOrange: var(--softOrange);
     --color-grey: var(--grey);
 }
 

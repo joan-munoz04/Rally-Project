@@ -56,7 +56,7 @@ const Index = ({ text, size, color, icon , variant ,onClick }: IndexProps) => {
   return (
     <button
     onClick={onClick}
-      className={`${colorClass} ${colorTextClass} ${variantClasses} rounded-xl flex items-center justify-center gap-4 ${sizeClass}`}
+      className={`${colorClass} ${colorTextClass} ${variantClasses} hover:cursor-pointer rounded-xl flex items-center justify-center gap-4 ${sizeClass}`}
     >
       {icon && <Icon icon={icon} width="25" height="25" />}
       <span>{text}</span>
