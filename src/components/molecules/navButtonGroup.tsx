@@ -18,6 +18,7 @@ export default function NavButtonGroup() {
         color="grey"
         variant="grey"
         icon="ic:baseline-signal-cellular-alt"
+        onClick={() => router.replace('/results')}
       />
       <Button
         text="Vista por Puntos de Control"

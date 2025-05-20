@@ -8,6 +8,7 @@ interface IndexProps {
   icon?: string;
   variant?: string;
   iconPosition?: "left" | "right";
+  className?: string;
   onClick?: () => void;
 }
 
@@ -18,6 +19,7 @@ const Index = ({
   icon,
   variant,
   iconPosition,
+  className,
   onClick,
 }: IndexProps) => {
   const sizeClass =
@@ -28,7 +30,7 @@ const Index = ({
       : size === "large"
       ? "h-14 min-w-48"
       : size === "xl"
-      ? "h-20 min-w-70"
+      ? "h-20 min-w-70 text-lg"
       : size === "xxl"
       ? "h-22 min-w-78 text-lg"
       : "h-10 min-w-32";
@@ -65,7 +67,7 @@ const Index = ({
   return (
     <button
       onClick={onClick}
-      className={`${colorClass} ${colorTextClass} ${variantClasses} hover:cursor-pointer rounded-xl flex items-center justify-center gap-4 ${sizeClass}`}
+      className={`${colorClass} ${colorTextClass} ${variantClasses} hover:cursor-pointer rounded-xl flex items-center justify-center gap-4 ${sizeClass} ${className}`}
     >
       {icon && iconPosition !== "right" && (
         <Icon icon={icon} width="25" height="25" />
