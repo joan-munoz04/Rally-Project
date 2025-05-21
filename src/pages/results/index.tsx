@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 export default function Results() {
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState("control");
+  const [activeTab, setActiveTab] = useState("general");
 
   const data = [
     {
@@ -52,31 +52,35 @@ export default function Results() {
       controlPoint: 2,
       lastTime: "00:29:02",
       totalTime: "01:29:02",
-    },
+    }
   ];
 
   return (
     <div className="p-6 md:p-10">
-      <div className="flex justify-between items-start">
-        <div>
-          <h1 className="text-3xl text-center font-bold mb-2">
+      <div className="flex flex-col justify-between relative">
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="text-5xl text-center font-bold mb-24">
             Resultados y Clasificaciones
           </h1>
-          <p className="text-gray-700 mb-6">
+          <p className="absolute text-gray-700 mb-6 text-2xl top-20 left-4">
             Consulta aquí el estado en tiempo real y acumulado de las competencias
           </p>
         </div>
-        <Button
+        <div className="absolute top-0 right-0">
+          <Button
           text="Salir"
           size="small"
           color="dOrange"
           variant="primary"
-          icon="ic:sharp-arrow-back"
+          icon="mdi:exit-to-app"
+          iconPosition="right"
           onClick={() => router.push("/")}
-        />
+          />
+        </div>
+        
       </div>
 
-      <div className="flex justify-center space-x-40 mb-10">
+      <div className="flex justify-center font-bold space-x-40 mb-10">
         <Button
           text="Puntos de control"
           size="xl"
@@ -94,13 +98,12 @@ export default function Results() {
         />
       </div>
 
-      {/* Título centrado sobre la tabla */}
-      <div className="bg-orange-500 text-white text-xl font-semibold py-3 px-6 rounded-t-xl text-center max-w-5xl mx-auto mb-0">
-        Clasificación General
-      </div>
 
       {/* Tabla */}
-      <div className="bg-white shadow-md rounded-b-xl overflow-x-auto max-w-5xl mx-auto">
+      <div className="bg-white shadow-md  overflow-x-auto max-w-8xl mx-auto">
+        {activeTab === "general" && (
+          <ResultsTable title="Clasificación General" data={data} />
+        )}
         {activeTab === "control" && (
           <ResultsTable title="Clasificación General" data={data} />
         )}

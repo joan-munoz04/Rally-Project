@@ -30,9 +30,9 @@ const Index = ({
       : size === "large"
       ? "h-14 min-w-48"
       : size === "xl"
-      ? "h-20 min-w-70 text-lg"
+      ? "h-20 min-w-70 text-xl"
       : size === "xxl"
-      ? "h-22 min-w-78 text-lg"
+      ? "h-22 min-w-78 text-xl"
       : "h-10 min-w-32";
 
   const colorClass =

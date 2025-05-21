@@ -25,7 +25,8 @@ export default function NavButtonGroup() {
         size="xxl"
         color="grey"
         variant="grey"
-        icon="mdi:map-marker-path"
+        icon="mdi:location-on-outline"
+        className=''
       />
       <Button
         text="Vista por Categoría"
