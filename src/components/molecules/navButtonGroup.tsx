@@ -26,7 +26,7 @@ export default function NavButtonGroup() {
         color="grey"
         variant="grey"
         icon="mdi:location-on-outline"
-        className=''
+        onClick={() => router.replace('/results/controlPoints')}
       />
       <Button
         text="Vista por Categoría"

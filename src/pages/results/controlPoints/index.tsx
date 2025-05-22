@@ -1,5 +1,5 @@
 import Button from "@/components/atoms/Button";
-import ResultsTable from "@/components/organisms/resultsTable";
+import ControlPointsTable from "@/components/organisms/controlPointsTable";
 //import { useState } from "react";
 import { useRouter } from "next/router";
 
@@ -80,25 +80,21 @@ export default function Results() {
         
       </div>
 
-      <div className="flex justify-center font-bold space-x-40 mb-10">
-        <Button
-          text="Puntos de control"
-          size="xl"
-          //color={activeTab === "control" ? "dOrange" : "grey"}
-          //variant={activeTab === "control" ? "altOrange" : ""}
-          color="dOrange"
-          variant="altOrange"
-          onClick={() => router.replace('/results/controlPoints')}
-        />
-
+      <div className="flex justify-end font-bold space-x-40 mb-10 mr-40">
         <Button
           text="Categorías"
           size="xl"
-          //color={activeTab === "category" ? "dOrange" : "grey"}
-          //variant={activeTab === "category" ? "altOrange" : ""}
-          color="dOrange"
-          variant="altOrange"
+          color={"dOrange"}
+          variant={"altOrange"}
           onClick={() => router.replace('/results/category')}
+        />
+
+        <Button
+          text="General"
+          size="xl"
+          color={"dOrange"}
+          variant={"altOrange"}
+          onClick={() => router.replace('/results')}
         />
       </div>
 
@@ -106,7 +102,7 @@ export default function Results() {
       {/* Tabla */}
       <div className="bg-white shadow-md  overflow-x-auto max-w-8xl mx-auto">
         {(
-          <ResultsTable title="Clasificación General" data={data} />
+          <ControlPointsTable title="Puntos de Control" data={data} />
         //)}
         //{activeTab === "control" && (
         //  <ResultsTable title="Puntos de Control" data={data} />
