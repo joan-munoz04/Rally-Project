@@ -34,6 +34,7 @@ export default function NavButtonGroup() {
         color="grey"
         variant="grey"
         icon="mdi:format-list-bulleted-type"
+        onClick={() => router.replace('/results/category')}
       />
       <div className="sm:col-span-2 flex justify-center">
         <Button

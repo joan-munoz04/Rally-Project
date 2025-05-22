@@ -94,7 +94,7 @@ export default function Results() {
           size="xl"
           color={activeTab === "category" ? "dOrange" : "grey"}
           variant={activeTab === "category" ? "altOrange" : ""}
-          onClick={() => setActiveTab("category")}
+          onClick={() => router.replace('/results/category')}
         />
       </div>
 
@@ -105,12 +105,10 @@ export default function Results() {
           <ResultsTable title="Clasificación General" data={data} />
         )}
         {activeTab === "control" && (
-          <ResultsTable title="Clasificación General" data={data} />
+          <ResultsTable title="Puntos de Control" data={data} />
         )}
         {activeTab === "category" && (
-          <div className="p-6 text-center text-gray-600">
-            Aquí se mostrarán las clasificaciones por categoría.
-          </div>
+          <ResultsTable title="Clasificación" data={data} />
         )}
       </div>
     </div>
