@@ -86,8 +86,8 @@ export default function Results() {
           size="xl"
           //color={activeTab === "control" ? "dOrange" : "grey"}
           //variant={activeTab === "control" ? "altOrange" : ""}
-          color="dOrange"
-          variant="altOrange"
+          color="grey"
+          variant="grey"
           onClick={() => router.replace('/results/controlPoints')}
         />
 

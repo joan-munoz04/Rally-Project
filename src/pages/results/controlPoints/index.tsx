@@ -3,6 +3,13 @@ import ControlPointsTable from "@/components/organisms/controlPointsTable";
 //import { useState } from "react";
 import { useRouter } from "next/router";
 
+interface SelectProps {
+  label: string;
+  name: string;
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  options: string[];
+}
+
 export default function Results() {
   const router = useRouter();
   //const [activeTab, setActiveTab] = useState("general");
@@ -46,14 +53,18 @@ export default function Results() {
     },
     {
       place: "5º",
-      name: "Schumacher",
-      countryCode: "de",
-      team: "Honda",
+      name: "--------",
+      countryCode: "--",
+      team: "-------",
       controlPoint: 2,
-      lastTime: "00:29:02",
+      lastTime: "--------",
       totalTime: "01:29:02",
     }
   ];
+
+  const handleChange = () => {
+    //Llamar info de cada punto de control
+  };
 
   return (
     <div className="p-6 md:p-10">
@@ -63,8 +74,11 @@ export default function Results() {
             Resultados y Clasificaciones
           </h1>
           <p className="absolute text-gray-700 mb-6 text-2xl top-20 left-4">
-            Consulta aquí el estado en tiempo real y acumulado de las competencias
+            Consulta aquí el estado de cada punto de control de la competencia
           </p>
+        </div>
+        <div className="absolute top-40 left-4 w-sm text-xl">
+          <Select label="Seleccionar punto de control" name="cp" onChange={handleChange} options={["1", "2", "3", "4", "5", "6"]} />
         </div>
         <div className="absolute top-0 right-0">
           <Button
@@ -84,8 +98,8 @@ export default function Results() {
         <Button
           text="Categorías"
           size="xl"
-          color={"dOrange"}
-          variant={"altOrange"}
+          color={"grey"}
+          variant={"grey"}
           onClick={() => router.replace('/results/category')}
         />
 
@@ -111,6 +125,23 @@ export default function Results() {
         //  <ResultsTable title="Clasificación" data={data} />
         )}
       </div>
+    </div>
+  );
+}
+
+function Select({ label, name, onChange, options }: SelectProps) {
+  return (
+    <div>
+      <label className="block text-medium font-semibold mb-1">{label}</label>
+      <select
+        name={name}
+        onChange={onChange}
+        className="w-full border-2 border-orange-400 rounded-lg px-3 py-2 focus:outline-none"
+      >
+        {options.map((opt) => (
+          <option key={opt} value={opt}>{opt}</option>
+        ))}
+      </select>
     </div>
   );
 }
