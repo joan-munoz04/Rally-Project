@@ -71,7 +71,7 @@ export default function Results() {
       <div className="flex flex-col justify-between relative">
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-5xl text-center font-bold mb-24">
-            Resultados y Clasificaciones
+            Resultados y Clasificaciones por Punto de Control
           </h1>
           <p className="absolute text-gray-700 mb-6 text-2xl top-20 left-4">
             Consulta aquí el estado de cada punto de control de la competencia
