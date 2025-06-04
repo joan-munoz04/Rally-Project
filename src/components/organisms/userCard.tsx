@@ -21,7 +21,7 @@ interface UserCardProps {
 
 const UserCard = ({ name, email, avatarUrl , leftButton, rightButton, bottomButton}: UserCardProps) => {
   return (
-    <div className="relative bg-softOrange rounded-2xl shadow-lg p-2 flex flex-col items-center w-full  mx-auto">
+    <div className="relative bg-softOrange p-2 flex flex-col items-center w-full mx-auto">
       <div className="absolute top-4 left-0 right-0 flex justify-between px-4">
         {leftButton && (
           <Button
