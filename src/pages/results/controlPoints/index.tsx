@@ -38,27 +38,21 @@ export default function Results() {
       name: "David",
       countryCode: "se",
       team: "Toyota",
-      controlPoint: 4,
       lastTime: "00:22:05",
-      totalTime: "02:22:05",
     },
     {
       place: "4º",
       name: "Gustavo",
       countryCode: "br",
       team: "BMW",
-      controlPoint: 3,
       lastTime: "00:28:08",
-      totalTime: "01:28:08",
     },
     {
       place: "5º",
       name: "--------",
       countryCode: "--",
-      team: "-------",
-      controlPoint: 2,
+      team: "------",
       lastTime: "--------",
-      totalTime: "01:29:02",
     }
   ];
 

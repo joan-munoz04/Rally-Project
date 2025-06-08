@@ -104,15 +104,9 @@ export default function Results() {
 
 
       {/* Tabla */}
-      <div className="bg-white shadow-md  overflow-x-auto max-w-8xl mx-auto">
+      <div className="bg-white shadow-md overflow-x-auto max-w-8xl mx-auto">
         {(
           <ResultsTable title="Clasificación General" data={data} />
-        //)}
-        //{activeTab === "control" && (
-        //  <ResultsTable title="Puntos de Control" data={data} />
-        //)}
-        //{activeTab === "category" && (
-        //  <ResultsTable title="Clasificación" data={data} />
         )}
       </div>
     </div>

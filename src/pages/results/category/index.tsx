@@ -200,7 +200,7 @@ export default function Results() {
 
 
       {/* Tabla */}
-      <div className="bg-white shadow-md  overflow-x-auto max-w-8xl mx-auto">
+      <div className="bg-white shadow-md overflow-x-auto max-w-8xl mx-auto">
         {activeTab === "novatos" && (
           <ResultsTable title="Clasificación" data={novatos} />
         )}

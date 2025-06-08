@@ -1,3 +1,5 @@
+import { Icon } from "@iconify/react/dist/iconify.js";
+
 interface ControlPointRowProps {
   place: string;
   name: string;
@@ -14,18 +16,14 @@ export default function ControlPointRow({
   lastTime,
 }: ControlPointRowProps) {
   return (
-    <tr className="border-b text-2xl border-black">
-      <td className="py-4 px-4 font-medium">{place}</td>
-      <td className="py-4 px-4 flex items-center justify-center gap-2">
-        <img
-          src={`https://flagcdn.com/w40/${countryCode.toLowerCase()}.png`}
-          alt={`Bandera de ${countryCode}`}
-          className="w-8 h-5.5  object-cover"
-        />
-        <span>{name}</span>
+    <tr className="border-b flex justify-evenly items-center text-center text-lg border-black">
+      <td className="py-4 px-4 font-medium w-[315.92px]">{place}</td>
+      <td className="py-4 flex items-center gap-6 w-[149.61px]">
+        <Icon icon={`flagpack:${countryCode}`} width={32}></Icon>
+                <span>{name}</span>
       </td>
-      <td className="py-2 px-4">{team}</td>
-      <td className="py-2 px-4">{lastTime}</td>
+      <td className="py-2 px-4 w-[82.27px]">{team}</td>
+      <td className="py-2 px-4 w-[99.77px]">{lastTime}</td>
     </tr>
   );
 }
