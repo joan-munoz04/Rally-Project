@@ -104,7 +104,6 @@ export default function Results() {
           text="Salir"
           size="small"
           color="dOrange"
-          variant="primary"
           icon="mdi:exit-to-app"
           iconPosition="right"
           onClick={() => router.push("/")}
@@ -118,7 +117,6 @@ export default function Results() {
           text="General"
           size="medium"
           color={activeTab === "control" ? "dOrange" : "grey"}
-          variant={activeTab === "control" ? "altOrange" : ""}
           onClick={() => router.replace('/results')}
         />
 
@@ -126,14 +124,12 @@ export default function Results() {
           text="Novatos"
           size="medium"
           color={activeTab === "novatos" ? "dOrange" : "grey"}
-          variant={activeTab === "novatos" ? "altOrange" : ""}
           onClick={() => setActiveTab("novatos")}
         />
         <Button
           text="4x4's"
           size="medium"
           color={activeTab === "4x4" ? "dOrange" : "grey"}
-          variant={activeTab === "4x4" ? "altOrange" : ""}
           onClick={() => setActiveTab("4x4")}
         />
 
@@ -141,14 +137,12 @@ export default function Results() {
           text="300"
           size="medium"
           color={activeTab === "300" ? "dOrange" : "grey"}
-          variant={activeTab === "300" ? "altOrange" : ""}
           onClick={() => setActiveTab("300")}
         />
         <Button
           text="Heavy"
           size="medium"
           color={activeTab === "heavy" ? "dOrange" : "grey"}
-          variant={activeTab === "heavy" ? "altOrange" : ""}
           onClick={() => setActiveTab("heavy")}
         />
 
@@ -156,14 +150,12 @@ export default function Results() {
           text="Maxitrail"
           size="medium"
           color={activeTab === "maxitrail" ? "dOrange" : "grey"}
-          variant={activeTab === "maxitrail" ? "altOrange" : ""}
           onClick={() => setActiveTab("maxitrail")}
         />
         <Button
           text="PRO"
           size="medium"
           color={activeTab === "pro" ? "dOrange" : "grey"}
-          variant={activeTab === "pro" ? "altOrange" : ""}
           onClick={() => setActiveTab("pro")}
         />
 
@@ -171,14 +163,12 @@ export default function Results() {
           text="UTV"
           size="medium"
           color={activeTab === "utv" ? "dOrange" : "grey"}
-          variant={activeTab === "utv" ? "altOrange" : ""}
           onClick={() => setActiveTab("utv")}
         />
         <Button
           text="ATV"
           size="medium"
           color={activeTab === "atv" ? "dOrange" : "grey"}
-          variant={activeTab === "atv" ? "altOrange" : ""}
           onClick={() => setActiveTab("atv")}
         />
 
@@ -186,14 +176,12 @@ export default function Results() {
           text="300 Expertos"
           size="medium"
           color={activeTab === "300exp" ? "dOrange" : "grey"}
-          variant={activeTab === "300exp" ? "altOrange" : ""}
           onClick={() => setActiveTab("300exp")}
         />
         <Button
           text="Turismo"
           size="medium"
           color={activeTab === "turismo" ? "dOrange" : "grey"}
-          variant={activeTab === "turismo" ? "altOrange" : ""}
           onClick={() => setActiveTab("turismo")}
         />
       </div>

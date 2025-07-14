@@ -40,6 +40,8 @@ const Index = ({
       ? "bg-lightOrange text-white hover:bg-orange-300"
       : color === "gOrange"
       ? "bg-creamOrange text-black"
+      : color === "default"
+      ? "bg-white text-black border-1 border-grey hover:bg-gray-200"
       : color === "grey"
       ? "bg-grey hover:bg-gray-300"
       : "";
