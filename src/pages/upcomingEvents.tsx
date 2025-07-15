@@ -1,26 +1,20 @@
-import { useState } from "react";
 import Button from "@/components/atoms/Button";
 import EventCard from "@/components/molecules/eventCard";
-//import AddEventModal from "@/components/molecules/addEventModal";
+import { eventsData } from "@/data/eventsData";
 import { useRouter } from "next/router";
+import { useEvent } from "@/context/eventContext";
 
 export default function UpcomingEvents() {
-
-  const handleEventDetails = () => {
-    router.replace("/eventDetails")
-  }
-
+  const { setSelectedEvent } = useEvent();
   const router = useRouter();
-  const [events] = useState([
-    { date: "2024-05-12", location: "Acapulco", categories: "4x4, ATV" },
-    { date: "2025-08-22", location: "Risaralda", categories: "300, UTV" },
-    { date: "2026-12-06", location: "Southampton", categories: "300 pro, Trail" },
-    { date: "2025-01-19", location: "New Venice", categories: "Novatos" },
-  ]);
 
-  /*const handleAddEvent = (event: { date: string; location: string; categories: string }) => {
-    setEvents(prev => [...prev, event]);
-  };*/
+  const handleEventDetails = (id: string) => {
+    const event = eventsData.find((e) => e.id === id);
+    if (event) {
+      setSelectedEvent(event);
+      router.push("/eventDetails");
+    }
+  };
 
   return (
     <div className="bg-creamOrange min-h-screen w-full flex items-center justify-center px-4">
@@ -38,13 +32,13 @@ export default function UpcomingEvents() {
           {//<AddEventModal onAddEvent={handleAddEvent} /> 
           }
           <div className="w-4/5 flex flex-col overflow-auto gap-6 text-lg">
-            {events.map((event, index) => (
+            {eventsData.map((event) => (
               <EventCard
-                key={index}
+                key={event.id}
                 date={event.date}
                 location={event.location}
                 categories={event.categories}
-                onClick={handleEventDetails}
+                onClick={() => handleEventDetails(event.id)}
               />
             ))}
           </div>

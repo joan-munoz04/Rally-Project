@@ -12,21 +12,21 @@ interface PaymentMethodProps {
 const PaymentMethod = ({ paymentNumber1, paymentNumber2, paymentNumber3, paymentNumber4 }: PaymentMethodProps) => {
     const [activeTab, setActiveTab] = useState("Competencia")
     return (
-        <div className="flex flex-col gap-4 border-2 border-[#D9D9D9] rounded-xl">
-            <h1 className="text-3xl text-[#1E1E1E]">Medios de pago</h1>
-            <div>
+        <div className="flex flex-col gap-4 border-2 p-4 border-[#D9D9D9] rounded-xl">
+            <h1 className="text-3xl font-bold text-[#1E1E1E]">Medios de pago</h1>
+            <div className="flex justify-center text-xl">
                 <Button text="Turismo" 
-                size="medium"
+                size="large"
                 color={activeTab === "Turismo" ? "lOrange" : "default"}
                 onClick={() => setActiveTab("Turismo")}>
                 </Button>
                 <Button text="Competencia" 
-                size="medium"
+                size="large"
                 color={activeTab === "Competencia" ? "lOrange" : "default"}
                 onClick={() => setActiveTab("Competencia")}>
                 </Button>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-4">
                 <PaymentRow paymentName="Bancolombia" accNumber={paymentNumber1}></PaymentRow>
                 <PaymentRow paymentName="Nequi" accNumber={paymentNumber2}></PaymentRow>
                 <PaymentRow paymentName="Daviplata" accNumber={paymentNumber3}></PaymentRow>

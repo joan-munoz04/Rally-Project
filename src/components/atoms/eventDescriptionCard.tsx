@@ -8,16 +8,16 @@ interface EventDescriptionCardProps {
 
 const EventDescriptionCard = ({ description, image, locationLink }: EventDescriptionCardProps) => {
     return (
-        <div className="flex flex-col gap-2 bg-creamOrange relative border-2 border-[#D9D9D9] rounded-xl">
-            <div className="flex flex-col gap-4">
-                <h1 className="text-2xl">Turismo</h1>
-                <p>{description}</p>
-                <link rel="link" href={locationLink} />
+        <div className="flex flex-row items-center p-4 gap-2 bg-creamOrange/20 relative border-2 border-[#D9D9D9] rounded-xl h-full">
+            <div className="flex flex-col gap-4 w-full">
+                <h1 className="text-3xl font-bold">Turismo</h1>
+                <p className="text-xl text-textGray">{description} <br/>Ésta es su ubicación:</p>
+                <a href={locationLink} target="_#" className="text-textGray hover:text-[#000] underline text-xl">{locationLink}</a>
+                <Button text="Ver más" icon="mdi:plus" size="medium" iconPosition="right" color="lOrange" className="w-[20%] text-xl"></Button>
             </div>
             <div>
-                <img src={image} alt={image} className="p-2 bg-lightOrange rounded-lg"/>
+                <img src={image} alt={image} className="p-4 bg-creamOrange/40 rounded-lg"/>
             </div>
-            <Button text="Ver más" icon="mdi:plus" size="small" iconPosition="right" color="lOrange" className="bottom-2 left-2 absolute"></Button>
         </div>
     )
 }

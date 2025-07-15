@@ -1,35 +1,36 @@
 import Button from "@/components/atoms/Button";
 import LeftEventDetails from "@/components/organisms/leftEventDetails";
 import RightEventDetails from "@/components/organisms/rightEventDetails";
+import { useEvent } from "@/context/eventContext";
+import { useRouter } from "next/router";
 
-interface EventDetailsProps {
-    date: string;
-    location: string;
-    hotel: string;
-    description: string;
-    image: string;
-    locationLink: string;
-    videoURL: string;
-    requirements: string;
-    price1Pre: string;
-    price2Pre: string;
-    price1Phase1: string;
-    price2Phase1: string;
-    price1Full: string;
-    price2Full: string;
-    paymentNumber1: string;
-    paymentNumber2: string;
-    paymentNumber3: string;
-    paymentNumber4: string;
-    details: string;
-}
+export default function EventDetails () {
+    const { selectedEvent } = useEvent();
+    const router = useRouter();
 
-export default function EventDetails ({ date, location, hotel, description, image, locationLink, videoURL, requirements, price1Pre, price2Pre, price1Phase1, price2Phase1, price1Full, price2Full, paymentNumber1, paymentNumber2, paymentNumber3, paymentNumber4, details }: EventDetailsProps) {
+    if (!selectedEvent) {
+    return <p className="text-center text-xl">No se ha seleccionado ningún evento.</p>;
+  }
+
+  const {
+    date, location, hotel, description, image, locationLink, videoURL, requirements,
+    price1Pre, price2Pre, price1Phase1, price2Phase1, price1Full, price2Full,
+    paymentNumber1, paymentNumber2, paymentNumber3, paymentNumber4, details
+  } = selectedEvent;
+
     return (
-        <div className="space-x-2 relative">
-            <h1 className="text-3xl text-start">Detalles del evento</h1>
-            <Button text="Volver" icon="mdi:arrow-left" iconPosition="left" color="lOrange" size="small" className="absolute top-2 right-2"></Button>
-            <div className="w-1/2">
+        <div className="space-x-12 relative px-32 p-24 flex">
+            <h1 className="text-4xl top-18 font-bold absolute">Detalles del evento</h1>
+            <Button 
+            text="Volver" 
+            icon="mdi:arrow-left" 
+            iconPosition="left" 
+            color="lOrange" 
+            size="medium" 
+            className="absolute top-8 right-4 text-xl"
+            onClick={() => router.back()}
+            ></Button>
+            <div className="w-[50%] mt-16">
                 <LeftEventDetails 
                 date={date} 
                 location={location} 
@@ -41,7 +42,7 @@ export default function EventDetails ({ date, location, hotel, description, imag
                 requirements={requirements}
                 ></LeftEventDetails>
             </div>
-            <div className="w-1/2">
+            <div className="w-[50%] mt-16">
                 <RightEventDetails
                 price1Pre={price1Pre} 
                 price2Pre={price2Pre} 
