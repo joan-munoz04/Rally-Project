@@ -11,7 +11,7 @@ interface ControlPointRowProps {
 
 interface ControlPointsTableProps {
   data: ControlPointRowProps[];
-  title: string;
+  title?: string;
 }
 
 export default function ResultsTable({ data, title }: ControlPointsTableProps) {

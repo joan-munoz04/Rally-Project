@@ -9,6 +9,7 @@ interface IndexProps {
   iconPosition?: "left" | "right";
   className?: string;
   onClick?: () => void;
+  type?: "submit" | "reset" | "button" | undefined; 
 }
 
 const Index = ({
@@ -19,6 +20,7 @@ const Index = ({
   iconPosition,
   className,
   onClick,
+  type
 }: IndexProps) => {
   const sizeClass =
     size === "small"
@@ -35,7 +37,7 @@ const Index = ({
 
   const colorClass =
     color === "dOrange"
-      ? "bg-darkOrange text-white hover:bg-orange-500"
+      ? "bg-darkOrange text-white hover:bg-orange-300"
       : color === "lOrange"
       ? "bg-lightOrange text-white hover:bg-orange-300"
       : color === "gOrange"
@@ -52,6 +54,7 @@ const Index = ({
     <button
       onClick={onClick}
       className={`${colorClass} hover:cursor-pointer rounded-xl font-medium flex items-center justify-center gap-4 ${sizeClass} ${className}`}
+      type={type}
     >
       {icon && iconPosition !== "right" && (
         <Icon icon={icon} width="25" height="25" />
@@ -60,6 +63,7 @@ const Index = ({
       {icon && iconPosition === "right" && (
         <Icon icon={icon} width="25" height="25" />
       )}
+      
     </button>
   );
 };

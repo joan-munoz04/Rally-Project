@@ -79,7 +79,6 @@ export default function Results() {
           text="Salir"
           size="small"
           color="dOrange"
-          variant="primary"
           icon="mdi:exit-to-app"
           iconPosition="right"
           onClick={() => router.push("/")}
@@ -92,16 +91,14 @@ export default function Results() {
         <Button
           text="Categorías"
           size="xl"
-          color={"grey"}
-          variant={"grey"}
+          color="grey"
           onClick={() => router.replace('/results/category')}
         />
 
         <Button
           text="General"
           size="xl"
-          color={"dOrange"}
-          variant={"altOrange"}
+          color="dOrange"
           onClick={() => router.replace('/results')}
         />
       </div>
@@ -111,12 +108,6 @@ export default function Results() {
       <div className="bg-white shadow-md  overflow-x-auto max-w-8xl mx-auto">
         {(
           <ControlPointsTable title="Puntos de Control" data={data} />
-        //)}
-        //{activeTab === "control" && (
-        //  <ResultsTable title="Puntos de Control" data={data} />
-        //)}
-        //{activeTab === "category" && (
-        //  <ResultsTable title="Clasificación" data={data} />
         )}
       </div>
     </div>

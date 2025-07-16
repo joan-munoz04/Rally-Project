@@ -19,7 +19,7 @@ export default function EventDetails () {
   } = selectedEvent;
 
     return (
-        <div className="space-x-12 relative px-32 p-24 flex">
+        <div className="space-x-12 relative lg:px-16 xl:px-32 px-8 p-24 flex">
             <h1 className="text-4xl top-18 font-bold absolute">Detalles del evento</h1>
             <Button 
             text="Volver" 
