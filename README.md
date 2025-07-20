@@ -1,40 +1,177 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🏁 GPX Rally Project
 
-## Getting Started
+**GPX Rally Project** es una aplicación web desarrollada con **Next.js + TypeScript** siguiendo la metodología **Atomic Design**. Esta herramienta está diseñada para gestionar eventos competitivos con roles diferenciados, permitiendo el registro de puntos de control, penalizaciones, clasificación por categoría y visualización detallada de resultados.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 *Demo en Vivo*
+
+🌐 *Aplicación Desplegada*: [https://gpx-front-8rip.vercel.app/](https://gpx-front-8rip.vercel.app/)
+
+---
+
+## 📦 Tecnologías y herramientas principales
+
+* **Framework:** [Next.js](https://nextjs.org/)
+* **Lenguaje:** TypeScript
+* **Estilos:** Tailwind CSS
+* **Diseño de componentes:** Atomic Design (Atoms, Molecules, Organisms)
+* **Íconos:** Lucide React
+* **Backend:** En construcción (pensado para ser integrado fácilmente)
+* **Estado global:** Context API
+
+---
+
+## 🧱 Estructura del Proyecto
+
+El proyecto sigue una arquitectura basada en Atomic Design:
+
+```
+/components
+  /atoms        -> Botones, tipografías, iconos
+  /molecules    -> Tarjetas, filas de datos, secciones con título + contenido
+  /organisms    -> Secciones completas: Sidebar, Layout, Secciones de perfil
+/pages          -> Rutas principales (index, login, eventos, resultados...)
+/context        -> EventContext para compartir datos de eventos entre vistas
+/types          -> Tipado de entidades como Evento, Movimiento, Usuario
+/utils          -> Funciones auxiliares como validación de usuarios
+/public         -> Imágenes usadas en las vistas
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 🚀 Instalación del Proyecto
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. **Clona el repositorio:**
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+   ```bash
+   git clone https://github.com/tu-usuario/controlpoint-tracker.git
+   cd controlpoint-tracker
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Instala las dependencias:**
 
-## Learn More
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Levanta el servidor de desarrollo:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Variables de entorno:**
+   Si usarás Supabase u otro backend, deberás agregar variables en un archivo `.env.local` como:
 
-## Deploy on Vercel
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=...
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## 🔐 Sistema de Login
+
+El login está diseñado para permitir ingreso solo a usuarios autorizados, como jueces o encargados del control.
+
+* Los usuarios se cargan desde un archivo de datos local simulado (`users.ts`).
+* Si el usuario es válido, se redirige a la vista `/controlPointRegister`.
+* Si no lo es, se muestra un mensaje de error sin cambiar de vista.
+
+---
+
+## 🧠 Context API para Eventos
+
+Se utiliza `EventContext` para compartir la información de un evento seleccionado desde la vista `UpcomingEvents` hacia `EventDetails`, anticipando una futura integración con el backend.
+
+```tsx
+// Ejemplo de uso
+const { selectedEvent } = useEvent();
+```
+
+Esto facilita el manejo del estado y evita tener que pasar props entre vistas.
+
+---
+
+## 🧩 Componentes Clave
+
+### ✨ Atoms
+
+* `Button`: Componente reutilizable con variantes de color, tamaño e iconos.
+
+### 🧠 Molecules
+
+* `UserCard`: Tarjeta de perfil con botones personalizables.
+* `CompetenceRow`: Fila de resultados o clasificaciones.
+* `Requirements`: Bloque de requisitos desplegable.
+* `PriceRow`: Fila de costos con soporte para despliegue de múltiples entradas.
+
+### 🧳 Organisms
+
+* `Layout`: Estructura base para la aplicación.
+* `Sidebar`: Navegación izquierda responsiva.
+* `ControlPointRegister`: Vista para registrar paso de participantes.
+* `UpcomingEvents`: Vista con tarjetas de eventos próximos.
+* `EventDetails`: Descripción de un evento seleccionado.
+* `ResultsTable`: Tabla con resultados por categoría.
+
+---
+
+## 🖥️ Vistas Principales
+
+* `/` Inicio
+* `/login` Ingreso de jueces autorizados
+* `/controlPointRegister` Registro de punto de control
+* `/penaltyRegister` Registro de penalizaciones
+* `/results` Vista general de resultados
+* `/results/[category]` Clasificación por categoría
+* `/upcoming-events` Eventos próximos y detalles
+
+---
+
+## 📱 Responsividad
+
+* Sidebar oculta en resoluciones pequeñas y desplegable mediante botón.
+* Componentes adaptativos con `flex`, `grid`, `gap`, `min-h`, `overflow`, etc.
+* Textos, botones y tablas adaptados a móvil, tablet y escritorio.
+
+---
+
+## 🧪 Datos Simulados
+
+Para pruebas sin backend, se han incluido:
+
+* Usuarios precargados (archivo `users.ts`)
+* Eventos de prueba por categoría
+* Resultados simulados
+
+Esto permite navegar completamente por la app sin necesidad de una API activa.
+
+---
+
+## 🛠️ En desarrollo futuro...
+
+* Integración con backend Supabase
+* Persistencia de sesiones y roles
+* Carga y edición de eventos desde interfaz
+* Gráficos en tiempo real de resultados y movimientos
+* Panel administrativo para control general
+
+---
+
+## 🤝 Contribuciones
+
+Toda mejora es bienvenida. Puedes crear un `Pull Request` o abrir un `Issue` para discutir nuevas funcionalidades o reportar errores.
+
+---
+
+## 🧑 Autor
+
+Proyecto desarrollado por **Joan Manuel Muñoz Monroy** como parte de una arquitectura frontend moderna, orientada a la escalabilidad y buena experiencia de usuario.
+
+---
+
+## 📄 Licencia
+
+MIT License. Puedes usarlo, modificarlo y adaptarlo libremente.
