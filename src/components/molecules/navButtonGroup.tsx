@@ -3,7 +3,7 @@ import router from 'next/router';
 
 export default function NavButtonGroup() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
       <Button
         text="Perfil"
         size="xxl"

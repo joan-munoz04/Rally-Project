@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 export default function ControlPointRegister () {
     const router = useRouter();
     return (
-        <div className="flex flex-col gap-12 relative p-12">
+        <div className="flex flex-col gap-10 relative p-10">
             <h1 className="text-4xl font-bold text-center">Registro Punto de Control</h1>
             <CPRegisterTop></CPRegisterTop>
             <CPPreviewTable></CPPreviewTable>

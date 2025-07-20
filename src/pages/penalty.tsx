@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 export default function Penalty () {
     const router = useRouter();
     return (
-        <div className="flex flex-col gap-12 relative p-12">
+        <div className="flex flex-col gap-8 relative p-8">
             <h1 className="text-4xl font-bold text-center">Penalizaciones</h1>
             <PenaltyTop></PenaltyTop>
             <CPPreviewTable></CPPreviewTable>

@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 export default function Profile() {
   const router = useRouter();
   return (
-    <div className="bg-creamOrange min-h-screen flex justify-center items-center px-4 py-8">
+    <div className="bg-creamOrange h-screen flex justify-center items-center px-4 py-8">
       <div className="bg-white w-full max-w-7xl shadow-lg overflow-hidden">
         <div className="flex justify-between items-start bg-peach px-12 py-12">
           <div className="flex-grow flex justify-center">

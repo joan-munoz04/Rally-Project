@@ -15,7 +15,7 @@ export default function Layout() {
         {/* Contenido principal */}
         <div className="w-full md:w-3/4 flex flex-col overflow-y-auto">
           <Header />
-          <div className="flex items-center pb-10 justify-center">
+          <div className="flex items-center pb-10 justify-center overflow-hidden">
             <MainContent />
           </div>
         </div>

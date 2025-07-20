@@ -33,13 +33,13 @@ const PenaltyTop = () => {
       };
     return (
         <div className="relative flex flex-col gap-4 justify-center items-stretch">
-            <div className="flex justify-evenly w-full">
+            <div className="flex justify-between px-42 w-full">
                 <Select label="Categoría" name="categoria" onChange={handleChange} options={["Novatos", "4x4's", "300", "Heavy", "Maxitrail", "PRO", "UTV", "ATV", "300 Expertos", "Turismo"]}></Select>
                 <Input label="Número del competidor" value={formData.numeroCompetidor} name="numeroCompetidor" onChange={handleChange} placeholder="35"></Input>
                 <Input label="Tiempo (HH:MM:SS)" value={formData.tiempo} name="tiempo" onChange={handleChange} placeholder="(HH:MM:SS)"></Input>
                 <Input label="Penalización" value={formData.penalizacion} name="penalizacion" onChange={handleChange} placeholder="(HH:MM:SS)"></Input>
             </div>
-            <div className="flex justify-between mx-24">
+            <div className="flex justify-between px-42">
                 <Input label="Piloto" value={formData.piloto} name="piloto" onChange={handleChange} placeholder="Nombre Piloto"></Input>
                 <Select label="Punto de control" name="puntoControl"  onChange={handleChange} options={["1", "2", "3", "4", "5", "6"]} />
             </div>

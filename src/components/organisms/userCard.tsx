@@ -28,7 +28,6 @@ const UserCard = ({ name, email, avatarUrl , leftButton, rightButton, bottomButt
             text={leftButton.text}
             icon={leftButton.icon}
             color={leftButton.color || "lOrange"}
-            variant="altOrange"
             size="small"
             iconPosition={leftButton.iconPosition}
             onClick={leftButton.onClick}
@@ -39,7 +38,6 @@ const UserCard = ({ name, email, avatarUrl , leftButton, rightButton, bottomButt
             text={rightButton.text}
             icon={rightButton.icon}
             color={rightButton.color || "lOrange"}
-            variant="altOrange"
             size="small"
             iconPosition={rightButton.iconPosition}
             onClick={rightButton.onClick}
@@ -76,7 +74,6 @@ const UserCard = ({ name, email, avatarUrl , leftButton, rightButton, bottomButt
       size="small"
       color={bottomButton.color || 'lOrange'}
       iconPosition={bottomButton.iconPosition}
-      variant="altOrange"
       onClick={bottomButton.onClick}
     />
   ) : null}

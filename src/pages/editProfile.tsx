@@ -60,8 +60,8 @@ export default function EditProfile() {
     };
 
   return (
-    <div className="bg-creamOrange min-h-screen flex justify-center items-center px-4 py-8">
-      <div className="bg-white w-full max-w-6xl shadow-lg overflow-hidden">
+    <div className="bg-creamOrange min-h-screen flex justify-center items-center px-4 py-8 overflow-hidden">
+      <div className="bg-white w-full max-w-7xl overflow-hidden p-4 shadow-lg max-h-201">
         <div className="flex justify-between items-start bg-peach px-6 py-4">
           <div className="flex-grow flex justify-center">
             <UserCard
@@ -87,7 +87,7 @@ export default function EditProfile() {
           </div>
         </div>
 
-        <div className="p-6 max-w-6xl mx-auto overflow-auto max-h-130">
+        <div className="p-6 max-w-7xl mx-auto overflow-auto max-h-112">
         <form className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {/* Inputs y selects */}
           <Input label="Correo" name="correo" value={formData.correo} onChange={handleChange} />

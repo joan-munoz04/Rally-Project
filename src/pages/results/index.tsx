@@ -1,11 +1,9 @@
 import Button from "@/components/atoms/Button";
 import ResultsTable from "@/components/organisms/resultsTable";
-//import { useState } from "react";
 import { useRouter } from "next/router";
 
 export default function Results() {
   const router = useRouter();
-  //const [activeTab, setActiveTab] = useState("general");
 
   const data = [
     {
@@ -71,7 +69,6 @@ export default function Results() {
           text="Salir"
           size="small"
           color="dOrange"
-          variant="primary"
           icon="mdi:exit-to-app"
           iconPosition="right"
           onClick={() => router.push("/")}
@@ -84,20 +81,14 @@ export default function Results() {
         <Button
           text="Puntos de control"
           size="xl"
-          //color={activeTab === "control" ? "dOrange" : "grey"}
-          //variant={activeTab === "control" ? "altOrange" : ""}
           color="grey"
-          variant="grey"
           onClick={() => router.replace('/results/controlPoints')}
         />
 
         <Button
           text="Categorías"
           size="xl"
-          //color={activeTab === "category" ? "dOrange" : "grey"}
-          //variant={activeTab === "category" ? "altOrange" : ""}
           color="dOrange"
-          variant="altOrange"
           onClick={() => router.replace('/results/category')}
         />
       </div>

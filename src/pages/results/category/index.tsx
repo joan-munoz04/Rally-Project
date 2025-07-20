@@ -112,77 +112,88 @@ export default function Results() {
         
       </div>
 
-      <div className="flex justify-center font-bold space-x-2 mb-10">
+      <div className="flex justify-center font-bold space-x-4 text-xl mb-10">
         <Button
           text="General"
-          size="medium"
+          size="small"
           color={activeTab === "control" ? "dOrange" : "grey"}
           onClick={() => router.replace('/results')}
+          className="p-8"
         />
 
         <Button
           text="Novatos"
-          size="medium"
+          size="small"
           color={activeTab === "novatos" ? "dOrange" : "grey"}
           onClick={() => setActiveTab("novatos")}
+          className="p-8"
         />
         <Button
           text="4x4's"
-          size="medium"
+          size="small"
           color={activeTab === "4x4" ? "dOrange" : "grey"}
           onClick={() => setActiveTab("4x4")}
+          className="p-8"
         />
 
         <Button
           text="300"
-          size="medium"
+          size="small"
           color={activeTab === "300" ? "dOrange" : "grey"}
           onClick={() => setActiveTab("300")}
+          className="p-8"
         />
         <Button
           text="Heavy"
-          size="medium"
+          size="small"
           color={activeTab === "heavy" ? "dOrange" : "grey"}
           onClick={() => setActiveTab("heavy")}
+          className="p-8"
         />
 
         <Button
           text="Maxitrail"
-          size="medium"
+          size="small"
           color={activeTab === "maxitrail" ? "dOrange" : "grey"}
           onClick={() => setActiveTab("maxitrail")}
+          className="p-8"
         />
         <Button
           text="PRO"
-          size="medium"
+          size="small"
           color={activeTab === "pro" ? "dOrange" : "grey"}
           onClick={() => setActiveTab("pro")}
+          className="p-8"
         />
 
         <Button
           text="UTV"
-          size="medium"
+          size="small"
           color={activeTab === "utv" ? "dOrange" : "grey"}
           onClick={() => setActiveTab("utv")}
+          className="p-8"
         />
         <Button
           text="ATV"
-          size="medium"
+          size="small"
           color={activeTab === "atv" ? "dOrange" : "grey"}
           onClick={() => setActiveTab("atv")}
+          className="p-8"
         />
 
         <Button
           text="300 Expertos"
-          size="medium"
+          size="small"
           color={activeTab === "300exp" ? "dOrange" : "grey"}
           onClick={() => setActiveTab("300exp")}
+          className="p-8"
         />
         <Button
           text="Turismo"
-          size="medium"
+          size="small"
           color={activeTab === "turismo" ? "dOrange" : "grey"}
           onClick={() => setActiveTab("turismo")}
+          className="p-8"
         />
       </div>
 
