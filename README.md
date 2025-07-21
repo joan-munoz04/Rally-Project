@@ -6,7 +6,7 @@
 
 ## 🚀 *Demo en Vivo*
 
-🌐 *Aplicación Desplegada*: [https://gpx-front-8rip.vercel.app/](https://gpx-front-8rip.vercel.app/)
+🌐 *Aplicación Desplegada*: [https://rally-project-theta.vercel.app/](https://rally-project-theta.vercel.app/)
 
 ---
 
@@ -174,3 +174,4 @@ Proyecto desarrollado por **Joan Manuel Muñoz Monroy** como parte de una arquit
 
 ## 📄 Licencia
 
+MIT License. Puedes usarlo, modificarlo y adaptarlo libremente.
