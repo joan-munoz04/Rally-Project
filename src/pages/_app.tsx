@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import type { AppProps } from 'next/app';
 import LoadingScreen from '@/components/organisms/loadingScreen';
+import { EventProvider } from '@/context/eventContext';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -24,9 +25,11 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router]);
 
   return (
-    <>
+    <EventProvider>
+      <>
       {loading && <LoadingScreen />}
       <Component {...pageProps} />
     </>
+    </EventProvider>
   );
 }

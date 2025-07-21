@@ -11,7 +11,6 @@ export default function Header() {
         size="medium"
         color="lOrange"
         icon="system-uicons:enter"
-        variant="altOrange"
         onClick={() => router.push('/login')}
       />
       <Button
@@ -20,7 +19,6 @@ export default function Header() {
         color="lOrange"
         icon="ic:baseline-assignment"
         iconPosition='right'
-        variant="altOrange"
         onClick={() => router.push('/register')}
       />
     </div>

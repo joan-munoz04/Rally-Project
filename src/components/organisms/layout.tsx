@@ -8,14 +8,14 @@ export default function Layout() {
         
         {/* Imagen del costado izquierdo (como antes) */}
         <div
-          className="w-full md:w-1/3 bg-cover bg-center"
+          className="w-full md:w-1/4 bg-cover bg-center"
           style={{ backgroundImage: "url('/Darien_bike.jpg')" }}
         ></div>
 
         {/* Contenido principal */}
-        <div className="w-full md:w-2/3 flex flex-col overflow-y-auto">
+        <div className="w-full md:w-3/4 flex flex-col overflow-y-auto">
           <Header />
-          <div className="flex-1 flex items-center pb-10 justify-center">
+          <div className="flex items-center pb-10 justify-center overflow-hidden">
             <MainContent />
           </div>
         </div>

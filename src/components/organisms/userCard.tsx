@@ -21,14 +21,13 @@ interface UserCardProps {
 
 const UserCard = ({ name, email, avatarUrl , leftButton, rightButton, bottomButton}: UserCardProps) => {
   return (
-    <div className="relative bg-softOrange rounded-2xl shadow-lg p-2 flex flex-col items-center w-full  mx-auto">
+    <div className="relative bg-softOrange p-2 flex flex-col items-center w-full mx-auto">
       <div className="absolute top-4 left-0 right-0 flex justify-between px-4">
         {leftButton && (
           <Button
             text={leftButton.text}
             icon={leftButton.icon}
             color={leftButton.color || "lOrange"}
-            variant="altOrange"
             size="small"
             iconPosition={leftButton.iconPosition}
             onClick={leftButton.onClick}
@@ -39,7 +38,6 @@ const UserCard = ({ name, email, avatarUrl , leftButton, rightButton, bottomButt
             text={rightButton.text}
             icon={rightButton.icon}
             color={rightButton.color || "lOrange"}
-            variant="altOrange"
             size="small"
             iconPosition={rightButton.iconPosition}
             onClick={rightButton.onClick}
@@ -76,7 +74,6 @@ const UserCard = ({ name, email, avatarUrl , leftButton, rightButton, bottomButt
       size="small"
       color={bottomButton.color || 'lOrange'}
       iconPosition={bottomButton.iconPosition}
-      variant="altOrange"
       onClick={bottomButton.onClick}
     />
   ) : null}

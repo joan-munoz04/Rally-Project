@@ -44,6 +44,7 @@ export default function Register() {
     instagram: "",
     facebook: "",
     pais: "Colombia",
+    lugarResidencia: "Medellín, Antioquia"
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -62,8 +63,8 @@ export default function Register() {
     <div>
       {/* Header manual */}
       <div className="bg-orange-500 text-white p-4 flex font-medium justify-between items-center">
-        <Button text="Registrarse" color="lOrange" size="medium" icon="ic:baseline-assignment" iconPosition="right" variant="altOrange" onClick={handleRegister} />
-        <Button text="Volver" color="lOrange" size="medium" icon="ic:outline-start" iconPosition="right" variant="altOrange" onClick={handleBack} />
+        <Button text="Registrarse" color="lOrange" size="medium" icon="ic:baseline-assignment" iconPosition="right" onClick={handleRegister} />
+        <Button text="Volver" color="lOrange" size="medium" icon="ic:outline-start" iconPosition="right" onClick={handleBack} />
       </div>
 
       <div className="p-6 max-w-6xl mx-auto">
@@ -94,7 +95,8 @@ export default function Register() {
           <Input label="Terrapirata" name="terrapirata" value={formData.terrapirata} onChange={handleChange} />
           <Input label="Instagram" name="instagram" value={formData.instagram} onChange={handleChange} />
           <Input label="Facebook" name="facebook" value={formData.facebook} onChange={handleChange} />
-          <Input label="País de origen" name="pais" value={formData.pais} onChange={handleChange} />
+          <Input label="Nacionalidad" name="pais" value={formData.pais} onChange={handleChange} />
+          <Input label="Lugar de residencia" name="pais" value={formData.lugarResidencia} onChange={handleChange} />
         </form>
       </div>
     </div>

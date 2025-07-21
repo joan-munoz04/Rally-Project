@@ -174,4 +174,3 @@ Proyecto desarrollado por **Joan Manuel Muñoz Monroy** como parte de una arquit
 
 ## 📄 Licencia
 
-MIT License. Puedes usarlo, modificarlo y adaptarlo libremente.

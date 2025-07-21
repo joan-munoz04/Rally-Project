@@ -6,10 +6,10 @@ interface IndexProps {
   size: string;
   color: string;
   icon?: string;
-  variant?: string;
   iconPosition?: "left" | "right";
   className?: string;
   onClick?: () => void;
+  type?: "submit" | "reset" | "button" | undefined; 
 }
 
 const Index = ({
@@ -17,10 +17,10 @@ const Index = ({
   size,
   color,
   icon,
-  variant,
   iconPosition,
   className,
   onClick,
+  type
 }: IndexProps) => {
   const sizeClass =
     size === "small"
@@ -30,44 +30,31 @@ const Index = ({
       : size === "large"
       ? "h-14 min-w-48"
       : size === "xl"
-      ? "h-20 min-w-70 text-lg"
+      ? "h-20 min-w-70 text-xl"
       : size === "xxl"
-      ? "h-22 min-w-78 text-lg"
+      ? "h-22 min-w-78 text-xl"
       : "h-10 min-w-32";
 
   const colorClass =
     color === "dOrange"
-      ? "bg-darkOrange"
+      ? "bg-darkOrange text-white hover:bg-orange-300"
       : color === "lOrange"
-      ? "bg-lightOrange"
+      ? "bg-lightOrange text-white hover:bg-orange-300"
       : color === "gOrange"
-      ? "bg-creamOrange"
+      ? "bg-creamOrange text-black"
+      : color === "default"
+      ? "bg-white text-black border-1 border-grey hover:bg-gray-200"
       : color === "grey"
-      ? "bg-grey"
+      ? "bg-grey hover:bg-gray-300"
       : "";
 
-  const colorTextClass =
-    color === "dOrange"
-      ? "text-white"
-      : color === "lOrange"
-      ? "text-white"
-      : color === "gOrange"
-      ? "text-black"
-      : color === "grey"
-      ? "text-black"
-      : "";
 
-  const variantClasses =
-    variant === "orange"
-      ? "text-white hover:bg-orange-500"
-      : variant === "altOrange"
-      ? "text-white hover:bg-creamOrange"
-      : "text-gray-800 hover:bg-gray-300";
 
   return (
     <button
       onClick={onClick}
-      className={`${colorClass} ${colorTextClass} ${variantClasses} hover:cursor-pointer rounded-xl flex items-center justify-center gap-4 ${sizeClass} ${className}`}
+      className={`${colorClass} hover:cursor-pointer rounded-xl font-medium flex items-center justify-center gap-4 ${sizeClass} ${className}`}
+      type={type}
     >
       {icon && iconPosition !== "right" && (
         <Icon icon={icon} width="25" height="25" />
@@ -76,6 +63,7 @@ const Index = ({
       {icon && iconPosition === "right" && (
         <Icon icon={icon} width="25" height="25" />
       )}
+      
     </button>
   );
 };
