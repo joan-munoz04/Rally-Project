@@ -102,15 +102,13 @@ Esto facilita el manejo del estado y evita tener que pasar props entre vistas.
 
 ### 🧠 Molecules
 
-* `UserCard`: Tarjeta de perfil con botones personalizables.
 * `CompetenceRow`: Fila de resultados o clasificaciones.
-* `Requirements`: Bloque de requisitos desplegable.
-* `PriceRow`: Fila de costos con soporte para despliegue de múltiples entradas.
+* `VideoCard`: Tarjeta con video y datos de video, toma URL de youtube y muestra el video.
+* `EventDescriptionCard`: Tarjeta con info, imagen y detalles del evento personalizables.
 
 ### 🧳 Organisms
 
-* `Layout`: Estructura base para la aplicación.
-* `Sidebar`: Navegación izquierda responsiva.
+* `UserCard`: Tarjeta de perfil con botones personalizables.
 * `ControlPointRegister`: Vista para registrar paso de participantes.
 * `UpcomingEvents`: Vista con tarjetas de eventos próximos.
 * `EventDetails`: Descripción de un evento seleccionado.
@@ -132,7 +130,6 @@ Esto facilita el manejo del estado y evita tener que pasar props entre vistas.
 
 ## 📱 Responsividad
 
-* Sidebar oculta en resoluciones pequeñas y desplegable mediante botón.
 * Componentes adaptativos con `flex`, `grid`, `gap`, `min-h`, `overflow`, etc.
 * Textos, botones y tablas adaptados a móvil, tablet y escritorio.
 
