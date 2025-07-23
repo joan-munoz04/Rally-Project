@@ -18,6 +18,8 @@ interface SelectProps {
 }
 
 export default function Register() {
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [confirmMessage, setConfirmMessage] = useState("");
   const [formData, setFormData] = useState({
     correo: "",
     nombre: "",
@@ -56,11 +58,29 @@ export default function Register() {
   };
 
   const handleRegister = () => {
-    alert("Registrado!");
+    localStorage.setItem("profileData", JSON.stringify({
+      ...formData,
+      avatarUrl: "/profPic.jpg", // Imagen por defecto
+    }));
+    setConfirmMessage("¡Registro exitoso!");
+    setShowConfirmModal(true);
+    setTimeout(() => setShowConfirmModal(false), 2000);
   };
 
   return (
     <div>
+      {/* Modal de confirmación */}
+      {showConfirmModal && (
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+          <div className="bg-white rounded-xl shadow-lg px-8 py-6 border-2 border-orange-300 flex flex-col items-center animate-fadeIn">
+            <span className="text-2xl text-orange-500 font-bold mb-2">{confirmMessage}</span>
+            <button
+              className="mt-2 bg-orange-400 hover:bg-orange-500 text-white px-4 py-2 rounded-lg font-semibold shadow transition-all duration-200"
+              onClick={() => setShowConfirmModal(false)}
+            >Cerrar</button>
+          </div>
+        </div>
+      )}
       {/* Header manual */}
       <div className="bg-orange-500 text-white p-4 flex font-medium justify-between items-center">
         <Button text="Registrarse" color="lOrange" size="medium" icon="ic:baseline-assignment" iconPosition="right" onClick={handleRegister} />
